@@ -1,8 +1,10 @@
-import detection
+from detection import detector
+import cv2
 
 minimumDetectionArea = 2000
 imageSize = (480, 360)
 history_time = 50
+image_no = 0
 
 # Creating an instance for VideoCapture object
 # Your video file goes here
@@ -39,7 +41,7 @@ while(1):
 
     # Draws boxes where object detected, if no measurements, do nothing
     try:
-        d.draw_rectangles(coordinates, (256, 0, 0))
+        DetectorObject.draw_rectangles(coordinates, (0, 0, 0))
     except:
         pass
     
